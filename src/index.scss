@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --terminal-black: #000000;
+  --terminal-white: #ffffff;
+  --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
+}
+
+body {
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  color: var(--terminal-white);
+  background-color: var(--terminal-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes terminal-glow {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+// CRT flicker effect
+@keyframes crt-flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.98;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+a {
+  color: var(--terminal-white);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-shadow: 0 0 8px var(--terminal-white);
+  }
+
+  &:focus {
+    outline: 2px solid var(--terminal-white);
+    outline-offset: 4px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+// Skip link for accessibility
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--terminal-white);
+  color: var(--terminal-black);
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// Print styles
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .hero::before,
+  .hero::after,
+  .terminal-window {
+    animation: none !important;
+    box-shadow: none !important;
+    border: 1px solid black !important;
+  }
+
+  .name::after {
+    display: none;
+  }
+
+  .skip-link {
+    display: none;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+
+    &::after {
+      content: ' (' attr(href) ')';
+      font-size: 0.8em;
+    }
+  }
+}
