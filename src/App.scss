@@ -146,6 +146,58 @@
   }
 }
 
+.spotify-playing {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 2px solid var(--terminal-white);
+  background: var(--terminal-black);
+  text-align: center;
+  animation: crt-flicker 0.15s infinite alternate;
+
+  .spotify-label {
+    margin: 0 0 1rem 0;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+  }
+
+  .spotify-album-art {
+    border: 2px solid var(--terminal-white);
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: grayscale(100%) contrast(1.2);
+  }
+
+  .spotify-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--terminal-white);
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    .track-name {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .track-artist {
+      font-size: 0.875rem;
+      opacity: 0.8;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 1rem;
@@ -177,5 +229,25 @@
     max-width: 200px;
     padding: 1rem 1.25rem;
     font-size: 0.75rem;
+  }
+
+  .spotify-playing {
+    padding: 1rem;
+    margin-top: 1.5rem;
+
+    .spotify-album-art {
+      width: 80px;
+      height: 80px;
+    }
+
+    .spotify-track {
+      .track-name {
+        font-size: 0.875rem;
+      }
+
+      .track-artist {
+        font-size: 0.75rem;
+      }
+    }
   }
 }
