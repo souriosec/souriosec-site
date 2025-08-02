@@ -55,5 +55,10 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/spotify.js": {
+      "runtime": "nodejs20.x"
+    }
+  }
 }
