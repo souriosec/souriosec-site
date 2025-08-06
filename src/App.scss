@@ -66,6 +66,7 @@
     display: block;
     image-rendering: pixelated;
     filter: grayscale(100%) contrast(1.2);
+    animation: crt-flicker 0.15s infinite alternate;
   }
 }
 
