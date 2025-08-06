@@ -1,6 +1,6 @@
 # SOURIOSEC
 
-Personal website for SOURIOSEC - Full-Stack Software Engineer.
+SOURIOSEC - Software Engineer.
 
 ## Tech Stack
 
