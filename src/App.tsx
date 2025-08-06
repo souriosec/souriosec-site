@@ -103,7 +103,7 @@ function App() {
               href="https://github.com/souriosec"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit SOURIOSEC on GitHub (opens in new tab)"
+              aria-label="Visit SOURIOSEC's GitHub (opens in new tab)"
             >
               GitHub
             </a>
@@ -112,9 +112,25 @@ function App() {
               href="https://x.com/souriosec"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Visit SOURIOSEC on Twitter/X (opens in new tab)"
+              aria-label="Visit SOURIOSEC's Twitter/X (opens in new tab)"
             >
               Twitter/X
+            </a>
+            <a
+              className="portfolio-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit SOURIOSEC's portfolio (opens in new tab)"
+            >
+              PORTFOLIO
+            </a>
+            <a
+              className="blog-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit SOURIOSEC's blog (opens in new tab)"
+            >
+              BLOG
             </a>
           </nav>
         </div>
